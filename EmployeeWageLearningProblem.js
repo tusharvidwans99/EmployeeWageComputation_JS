@@ -3,12 +3,25 @@ console.log("Welcome to the Employee Wage Computation problem in Java Script");
 const IS_ABSENT=0;
 const WAGE_PER_HOUR=20;
 const TOTAL_WORKING_DAYS=20;
+const TOTAL_WORKING_HOURS=100;
 
-for(i=0;i<TOTAL_WORKING_DAYS;i++)
+let totalEmpHours=0;
+let employeeWage=0;
+let workingDay=0;
+
+
+while(workingDay<TOTAL_WORKING_DAYS && totalEmpHours<TOTAL_WORKING_HOURS)
 {
-    let employeeWage= WAGE_PER_HOUR*getEmpHours();
-    console.log("Employee Day"+(i+1)+" Wage: "+employeeWage);
+    workingDay++;
+    let emp_hours=getEmpHours();
+    totalEmpHours+=emp_hours;
+    console.log("Day"+(workingDay)+" Employee Wage: "+WAGE_PER_HOUR*emp_hours);
+    employeeWage= WAGE_PER_HOUR*totalEmpHours;
 }
+
+console.log("total work hours: "+totalEmpHours);
+console.log("total emp wage: "+employeeWage);
+console.log("total working days: "+workingDay);
 
 
 
