@@ -1,24 +1,28 @@
 console.log("Welcome to the Employee Wage Computation problem in Java Script");
 
-let checkEmp = Math.floor((Math.random()*10)%3);
 const IS_ABSENT=0;
 const WAGE_PER_HOUR=20;
 
-let emp_hours=0;
+let employeeWage= WAGE_PER_HOUR*getEmpHours();
+console.log("Employee Wage: "+employeeWage);
 
-switch(checkEmp)
+function getEmpHours()
+{
+    let emp_hours=0;
+    let checkEmp = Math.floor((Math.random()*10)%3);
+
+    switch(checkEmp)
 {
     case 1:
-        console.log("Employee is present for part time");
+        console.log("employee is present for part time");
         emp_hours=4;
-        break;
+        return emp_hours;
     case 2:
-        console.log("Employee is present for full time");
+        console.log("employee is present for full time");
         emp_hours=8;
-        break;
+        return emp_hours;
     default:
-        console.log("Employee is absent");
-        break;
+        console.log("employee is absent");
+        return emp_hours;
 }
-let employeeWage= WAGE_PER_HOUR*emp_hours;
-console.log("Employee Wage: "+employeeWage);
+}
